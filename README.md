@@ -38,3 +38,9 @@ Use `https://wedding.notin.fo` for RSVP_SITE_ORIGIN and `https://wedding.notin.f
 ## Domain
 
 GitHub Pages binds wedding.notin.fo to this repository with HTTPS enforcement. DNS CNAME points to paetur.github.io. Deployment path is empty, so the app is served at the domain root.
+
+## Verification before deployment
+
+The deployment checker now requires successful full CI for the selected public release tag’s exact commit before it downloads/builds a Pages artifact. All three application jobs must pass; lightweight checks, skipped jobs, missing evidence or GitHub API failures stop deployment. If blocked, run the full verification workflow in the public release repository and wait for success, then retry this manual deployment workflow. The accepted CI commit and run URL are recorded in the new artifact.
+
+Updating this checker does not run the manual Pages deployment or change the installed database/event.
