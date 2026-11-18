@@ -4,11 +4,11 @@ Website: **https://wedding.notin.fo/**
 
 [Setup wizard](https://wedding.notin.fo/setup.html) · [Administrator sign-in](https://wedding.notin.fo/admin/) · [Cloud setup guide](https://wedding.notin.fo/docs/StudioSetup.html)
 
-This repository deploys the selected [RSVP Manager release](https://github.com/Paetur/RSVP-Manager/releases/tag/v0.9.0-alpha.7) directly at the domain root. It contains deployment instructions; application files come from the verified release ZIP.
+This repository deploys the selected [RSVP Manager release](https://github.com/Paetur/RSVP-Manager/releases/tag/v0.9.0-alpha.8) directly at the domain root. It contains deployment instructions; application files come from the verified release ZIP.
 
 ## Deploy
 
-Open **Actions → Deploy RSVP → Run workflow** and select `v0.9.0-alpha.7`. The workflow checks the archive and every included file, then publishes the website using GitHub Pages. It does not create or change a Supabase project, run SQL, restore a backup or publish an event.
+Open **Actions → Deploy RSVP → Run workflow** and select `v0.9.0-alpha.8`. The workflow checks the archive and every included file, then publishes the website using GitHub Pages. It does not create or change a Supabase project, run SQL, restore a backup or publish an event.
 
 ## Existing backend and upgrades
 
