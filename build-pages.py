@@ -139,7 +139,7 @@ def build_site(archive, output, version, site_path, api_url='', public_key='', v
             if not path.is_file():
                 continue
             name = path.relative_to(source).as_posix()
-            if name in ['index.html', 'setup.html', 'setup-automatic.html', 'version.json', 'supabase/install.sql', 'supabase/install-manifest.json'] or any((name.startswith(d + '/') for d in ['admin', 'css', 'js', 'locales', 'docs', 'supabase/studio', 'supabase/upgrades'])):
+            if name in ['index.html', 'setup.html', 'setup-automatic.html', 'version.json', 'supabase/install.sql', 'supabase/install-manifest.json'] or any((name.startswith(d + '/') for d in ['admin', 'css', 'js', 'locales', 'docs', 'supabase/studio'])):
                 selected.append(name)
                 dest = target / name
                 dest.parent.mkdir(parents=True, exist_ok=True)

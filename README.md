@@ -4,15 +4,15 @@ Website: **https://wedding.notin.fo/**
 
 [Setup wizard](https://wedding.notin.fo/setup.html) · [Administrator sign-in](https://wedding.notin.fo/admin/) · [Cloud setup guide](https://wedding.notin.fo/docs/StudioSetup.html)
 
-This repository deploys the selected [RSVP Manager release](https://github.com/Paetur/RSVP-Manager/releases/tag/v0.9.0-alpha.9) directly at the domain root. It contains deployment instructions; application files come from the verified release ZIP.
+This repository deploys the selected [RSVP Manager release](https://github.com/Paetur/RSVP-Manager/releases/tag/v0.9.0-beta.1) directly at the domain root. It contains deployment instructions; application files come from the verified release ZIP.
 
 ## Deploy
 
-Open **Actions → Deploy RSVP → Run workflow** and select `v0.9.0-alpha.9`. The workflow checks the archive and every included file, then publishes the website using GitHub Pages. It does not create or change a Supabase project, run SQL, restore a backup or publish an event.
+Open **Actions → Deploy RSVP → Run workflow** and select `v0.9.0-beta.1`. The workflow checks the archive and every included file, then publishes the website using GitHub Pages. It does not create or change a Supabase project, run SQL, restore a backup or publish an event.
 
 ## Existing backend and upgrades
 
-The existing installation is configured. Keep the Actions connection variables, custom domain, root path, Auth redirects and backend secrets. For an existing alpha.8 backend, use the reviewed [scoped alpha.9 upgrade](https://github.com/Paetur/RSVP-Manager/blob/main/docs/UpgradeAlpha9.md) before deploying the newer website; never replay the fresh installer on populated data. Website deployment does not run database upgrades or publish an event.
+The existing installation is configured. Keep the Actions connection variables, custom domain, root path, Auth redirects and backend secrets. This installation already uses the schema required for beta.1. Use the SQL installer only with an empty application schema. Future updates to this backend require a separately reviewed change against the installed schema. Website deployment updates the Pages files only.
 
 For a separate new empty installation, create its Supabase project and use the setup wizard:
 
