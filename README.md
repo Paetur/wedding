@@ -4,15 +4,15 @@ Website: **https://wedding.notin.fo/**
 
 [Setup wizard](https://wedding.notin.fo/setup.html) · [Administrator sign-in](https://wedding.notin.fo/admin/) · [Cloud setup guide](https://wedding.notin.fo/docs/StudioSetup.html)
 
-This repository deploys the selected [RSVP Manager release](https://github.com/Paetur/RSVP-Manager/releases/tag/v0.9.0-beta.3) directly at the domain root. It contains deployment instructions; application files come from the verified release ZIP.
+This repository deploys the selected [RSVP Manager release](https://github.com/Paetur/RSVP-Manager/releases/tag/v0.9.0-beta.4) directly at the domain root. It contains deployment instructions; application files come from the verified release ZIP.
 
 ## Deploy
 
-Open **Actions → Deploy RSVP → Run workflow** and select `v0.9.0-beta.3`. The workflow checks the archive and every included file, then publishes the website using GitHub Pages. It does not create or change a Supabase project, run SQL, restore a backup or publish an event.
+Open **Actions → Deploy RSVP → Run workflow** and select `v0.9.0-beta.4`. The workflow checks the archive and every included file, then publishes the website using GitHub Pages. It does not create or change a Supabase project, run SQL, restore a backup or publish an event.
 
 ## Existing backend and upgrades
 
-The existing installation is configured. Keep the Actions connection variables, custom domain, root path, Auth redirects and backend secrets. Beta.3 retains the beta.2 table layout and backup format. For the existing backend, update the delivery-save routine and translation registry before deploying the beta.3 website. Use the SQL installer only with an empty application schema. The Pages workflow updates only the website files.
+The existing installation is configured. Keep the Actions connection variables, custom domain, root path, Auth redirects and backend secrets. Beta.4 introduces shared invitation snapshots and backup format 3. Apply a reviewed database update before selecting the beta.4 website. It preserves the existing records and private photos. Use the SQL installer only with an empty application schema. The Pages workflow updates only the website files.
 
 For a separate new empty installation, create its Supabase project and use the setup wizard:
 
