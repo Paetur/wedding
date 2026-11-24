@@ -3,6 +3,12 @@ import argparse, base64, hashlib, json, re, shutil, stat, tempfile, urllib.parse
 from pathlib import Path, PurePosixPath
 MAX_DOWNLOAD = 32 * 1024 * 1024
 MAX_OPENED = 128 * 1024 * 1024
+# The separate Shortcuts test website copies these from source.
+SHORTCUTS_PILOT_SCRIPTS = {
+    'js/shortcut-device-runner.js',
+    'js/shortcuts-test-installer.js',
+    'js/shortcuts-test-page.js',
+}
 
 def checked_path(value):
     if value == '':
@@ -139,6 +145,8 @@ def build_site(archive, output, version, site_path, api_url='', public_key='', v
             if not path.is_file():
                 continue
             name = path.relative_to(source).as_posix()
+            if name in SHORTCUTS_PILOT_SCRIPTS:
+                continue
             if name in ['index.html', 'setup.html', 'setup-automatic.html', 'version.json', 'supabase/install.sql', 'supabase/install-manifest.json'] or any((name.startswith(d + '/') for d in ['admin', 'css', 'js', 'locales', 'docs', 'supabase/studio'])):
                 selected.append(name)
                 dest = target / name
