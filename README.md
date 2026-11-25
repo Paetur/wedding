@@ -4,15 +4,15 @@ Website: **https://wedding.notin.fo/**
 
 [Setup wizard](https://wedding.notin.fo/setup.html) · [Administrator sign-in](https://wedding.notin.fo/admin/) · [Cloud setup guide](https://wedding.notin.fo/docs/StudioSetup.html)
 
-This repository deploys the selected [RSVP Manager release](https://github.com/Paetur/RSVP-Manager/releases/tag/v0.9.0-beta.8) directly at the domain root. It contains deployment instructions; application files come from the verified release ZIP.
+This repository deploys the selected [RSVP Manager release](https://github.com/Paetur/RSVP-Manager/releases/tag/v0.9.0) directly at the domain root. It contains deployment instructions; application files come from the verified release ZIP.
 
 ## Deploy
 
-Open **Actions → Deploy RSVP → Run workflow** and select `v0.9.0-beta.8`. The workflow checks the archive and every included file, then publishes the website using GitHub Pages. It does not create or change a Supabase project, run SQL, restore a backup or publish an event.
+Open **Actions → Deploy RSVP → Run workflow** and select `v0.9.0`. The workflow checks the archive and every included file, then publishes the website using GitHub Pages. It does not create or change a Supabase project, run SQL, restore a backup or publish an event.
 
 ## Existing backend and upgrades
 
-The existing installation is configured. Keep the Actions connection variables, custom domain, root path, Auth redirects and backend secrets. Backup format 3 remains current. Apply the reviewed database update before selecting the beta.8 website. Use the SQL installer only with an empty application schema. The Pages workflow updates only the website files.
+The existing installation is configured. Keep the Actions connection variables, custom domain, root path, Auth redirects and backend secrets. Backup format 3 remains current. For an original beta.8 backend, apply the reviewed guest salutation database update before selecting the 0.9.0 website. Take a fresh Full backup after the backend update. Use the SQL installer only with an empty application schema. The Pages workflow updates only the website files.
 
 For a separate new empty installation, create its Supabase project and use the setup wizard:
 
